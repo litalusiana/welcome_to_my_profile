@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Lita Lusiana</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+        background: linear-gradient(to bottom right, #ffc4ec, #ffd8f2, #ffe6f7);
+        color: #4a0066;
+        overflow-x: hidden;
+      }
+
+      /* Judul Welcome */
+      .welcome-title {
+        font-size: 38px;
+        font-weight: 600;
+        margin-top: 40px;
+        color: #b80086;
+        animation: fadeDown 1.4s ease;
+      }
+
+      @keyframes fadeDown {
+        0% {
+          opacity: 0;
+          transform: translateY(-40px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Bunga jatuh */
+      .flower {
+        position: fixed;
+        top: -10%;
+        font-size: 30px;
+        animation: fall linear infinite;
+        opacity: 0.9;
+        z-index: 1;
+      }
+
+      @keyframes fall {
+        0% {
+          transform: translateY(0) rotate(0deg);
+        }
+        100% {
+          transform: translateY(110vh) rotate(360deg);
+        }
+      }
+
+      /* Profile Box */
+      .profile-box {
+        margin-top: 40px;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(8px);
+        width: 80%;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 25px;
+        box-shadow: 0 0 25px rgba(255, 120, 190, 0.4);
+        position: relative;
+        z-index: 2;
+      }
+
+      h1 {
+        font-size: 32px;
+        margin-bottom: 10px;
+        color: #8a007a;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 1.6;
+      }
+
+      .social-buttons a {
+        display: inline-block;
+        margin: 10px;
+        padding: 12px 20px;
+        background: #ff8bd1;
+        color: white;
+        text-decoration: none;
+        border-radius: 30px;
+        font-size: 16px;
+        transition: 0.3s;
+        box-shadow: 0 4px 12px rgba(255, 0, 130, 0.3);
+      }
+
+      .social-buttons a:hover {
+        background: #ff5cb8;
+        transform: scale(1.1);
+      }
+
+      /* Tombol Musik */
+      #musicBtn {
+        margin-top: 20px;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 30px;
+        background: #ff8bd1;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s;
+        box-shadow: 0 4px 12px rgba(255, 0, 145, 0.3);
+      }
+
+      #musicBtn:hover {
+        background: #ff5cb8;
+        transform: scale(1.1);
+      }
+
+      /* Kotak komentar */
+      .comment-box {
+        margin-top: 40px;
+        width: 80%;
+        max-width: 500px;
+        background: rgba(255, 255, 255, 0.65);
+        padding: 25px;
+        border-radius: 20px;
+        backdrop-filter: blur(7px);
+        box-shadow: 0 0 20px rgba(255, 120, 190, 0.3);
+      }
+
+      .comment-box input,
+      .comment-box textarea {
+        width: 90%;
+        padding: 12px;
+        margin-top: 10px;
+        border-radius: 12px;
+        border: 1px solid #ff9ad9;
+        outline: none;
+        font-size: 15px;
+      }
+
+      .comment-box button {
+        margin-top: 15px;
+        padding: 10px 25px;
+        background: #ff8bd1;
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+        font-size: 15px;
+      }
+
+      .comment-box button:hover {
+        background: #ff5cb8;
+        transform: scale(1.1);
+      }
+
+      .comment-result {
+        margin-top: 30px;
+        text-align: left;
+        padding: 10px;
+        font-size: 16px;
+        color: #6a0060;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- BACKGROUND MUSIC -->
+    <audio id="bgm" src="audio/music.mp3" loop></audio>
+
+    <!-- Judul Welcome -->
+    <div class="welcome-title">🌸 Welcome to My Profile 🌸</div>
+
+    <!-- Bunga Jatuh -->
+    <script>
+      function createFlower() {
+        const flower = document.createElement("div");
+        flower.classList.add("flower");
+        const flowers = ["💮", "🌸", "🌺", "🌷"];
+        flower.textContent =
+          flowers[Math.floor(Math.random() * flowers.length)];
+        flower.style.left = Math.random() * 100 + "vw";
+        flower.style.animationDuration = 4 + Math.random() * 5 + "s";
+        document.body.appendChild(flower);
+
+        setTimeout(() => flower.remove(), 8000);
+      }
+      setInterval(createFlower, 500);
+    </script>
+
+    <!-- Profile Box -->
+    <div class="profile-box">
+      <h1>Lita Lusiana</h1>
+      <p>
+        Ibu 1 anak.<br />
+        Hobi bernyanyi & memasak.<br />
+        Suka kesendirian & ketenangan hidup.
+      </p>
+
+      <div class="social-buttons">
+        <a href="https://instagram.com/leeta_luciana" target="_blank"
+          >Instagram</a
+        >
+        <a href="https://facebook.com/leeta.luciana" target="_blank"
+          >Facebook</a
+        >
+        <a href="https://wa.me/62895631263868" target="_blank">WhatsApp</a>
+      </div>
+
+      <button id="musicBtn">Putar Musik</button>
+    </div>
+
+    <!-- Kotak Komentar -->
+    <div class="comment-box">
+      <h2>Komentar Pengunjung</h2>
+
+      <input type="text" id="nama" placeholder="Nama kamu..." />
+      <textarea id="pesan" rows="4" placeholder="Tulis komentar..."></textarea>
+
+      <button onclick="kirimKomentar()">Kirim</button>
+
+      <div class="comment-result" id="hasilKomentar"></div>
+    </div>
+
+    <!-- SCRIPT MUSIK -->
+    <script>
+      const bgm = document.getElementById("bgm");
+      const btn = document.getElementById("musicBtn");
+      let isPlaying = false;
+
+      btn.addEventListener("click", () => {
+        if (isPlaying) {
+          bgm.pause();
+          btn.textContent = "Putar Musik";
+          isPlaying = false;
+        } else {
+          bgm.volume = 0.4;
+          bgm.play();
+          btn.textContent = "Hentikan Musik";
+          isPlaying = true;
+        }
+      });
+    </script>
+
+    <!-- SCRIPT KOMENTAR -->
+    <script>
+      function kirimKomentar() {
+        const nama = document.getElementById("nama").value;
+        const pesan = document.getElementById("pesan").value;
+
+        if (nama === "" || pesan === "") {
+          alert("Nama dan komentar harus diisi ya 💗");
+          return;
+        }
+
+        const box = document.getElementById("hasilKomentar");
+        box.innerHTML += `<p><strong>${nama}:</strong> ${pesan}</p>`;
+
+        document.getElementById("nama").value = "";
+        document.getElementById("pesan").value = "";
+      }
+    </script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
